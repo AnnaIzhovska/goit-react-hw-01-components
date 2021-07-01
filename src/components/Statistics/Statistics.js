@@ -2,9 +2,9 @@ import PropTypes from'prop-types';
 import s from './Statistics.module.css';
 
 
-const Statistics = ({id, label, percentage}) => (
+const Statistics = ({label, percentage}) => (
 <>
-    <li className={s.item} key={id}>
+    <li className={s.item}>
       <span className={s.label}>{label}</span>
       <span className={s.percentage}>{percentage}%</span>
     </li>
@@ -12,8 +12,7 @@ const Statistics = ({id, label, percentage}) => (
 )
 
 Statistics.propTypes = {
-id: PropTypes.number.isRequired,
-// stats: PropTypes.array,
+id: PropTypes.string.isRequired,
 label: PropTypes.string.isRequired,
 percentage: PropTypes.number.isRequired,
 }

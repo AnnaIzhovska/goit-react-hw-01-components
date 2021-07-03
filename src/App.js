@@ -6,7 +6,7 @@ import profile from './data/profile.json';
 import StatisticsList from './components/Statistics/StatisticsList';
 import statistics from './data/statical-data.json';
 
-import FriendListItem from './components/Friends/FriendListItem';
+import FriendList from './components/Friends/FriendList';
 import friends from './data/friends.json';
 
 import TransactionHistory from './components/Transactions/TransactionHistory';
@@ -20,16 +20,13 @@ const App = () => {
     tag= {profile.tag} 
     location= {profile.location} 
     avatar= {profile.avatar}
-    stats= {profile.stats}
-    followers= {profile.stats.followers} 
-    views= {profile.stats.views} 
-    likes= {profile.stats.likes} />
+    stats= {profile.stats}/>
 
     <StatisticsList
       title="Upload stats"
       statistics={statistics} />
       
-     <FriendListItem friends={friends} />
+     <FriendList friends={friends} />
         
     <TransactionHistory items= {transactions}/>
 </>

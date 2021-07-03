@@ -1,19 +1,16 @@
+import s from './Friends.module.css'
 import avatarImg from '../avatar.webp';
 import PropTypes from'prop-types';
-import s from './Friends.module.css'
-import FriendList from './FriendList';
 
-const FriendListItem = ({friends}) => (
-  <FriendList>
-     {friends.map(({isOnline, avatar = avatarImg, name, id }) => (
-     <li className={s.item} key={id}>
+const FriendListItem = ({ avatar = avatarImg, name, isOnline, id }) => (
+<>
+   <li className={s.item} key={id}>
        <span className={s.status} style={{backgroundColor: isOnline ? 'green' : 'red'}}>{isOnline}</span>
        <img className={s.avatar} src={avatar} alt="" width="48" />
        <p className={s.name}>{name}</p>
-  </li>
-  ))}
-  </FriendList>
-    )
+    </li>
+</>
+);   
 
     FriendListItem.propTypes = {
       friends: PropTypes.arrayOf(
@@ -25,5 +22,6 @@ const FriendListItem = ({friends}) => (
         }),
       ),
     };
+
 
 export default FriendListItem;
